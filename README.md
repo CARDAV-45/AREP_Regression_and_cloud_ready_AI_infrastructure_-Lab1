@@ -115,32 +115,56 @@ L = [0.15, 0.35, 1.00, 2.30, 4.10, 7.00, 11.2, 17.5, 25.0, 35.0]
 
 **Notebooks visibles en SageMaker:**
 
-![Notebooks abiertos en SageMaker](capturas/Notebooks.png)
+<p align="center"> <img src="Capturas/Notebooks.png" alt="Notebooks abiertos en SageMaker"> </p>
 
 ### Parte 1 – Regresión Lineal (una característica)
 
-- Punto 1: ![Punto 1](Capturas/01_1.png)
-- Punto 2: ![Punto 2](Capturas/01_2.png)
-- Punto 3: ![Punto 3](Capturas/01_3.png)
-- Punto 4: ![Punto 4a](Capturas/01_4a.png)
-           ![Punto 4b](Capturas/01_4b.png)
-- Punto 5: ![Punto 5](Capturas/01_5.png)
-- Punto 6: ![Punto 6](Capturas/01_6.png)
-- Puntos 7 y 8: ![Puntos 7 y 8](Capturas/01_7,8.png)
-- Punto 9: ![Punto 9](Capturas/01_9.png)
+Punto 1:
+<p align="center"> <img src="Capturas/01_1.png" alt="Punto 1"> </p>
+
+Punto 2:
+<p align="center"> <img src="Capturas/01_2.png" alt="Punto 2"> </p>
+
+Punto 3:
+<p align="center"> <img src="Capturas/01_3.png" alt="Punto 3"> </p>
+
+Punto 4:
+<p align="center"> <img src="Capturas/01_4a.png" alt="Punto 4a"> <br> <img src="Capturas/01_4b.png" alt="Punto 4b"> </p>
+
+Punto 5:
+<p align="center"> <img src="Capturas/01_5.png" alt="Punto 5"> </p>
+
+Punto 6:
+<p align="center"> <img src="Capturas/01_6.png" alt="Punto 6"> </p>
+
+Punto 7 y 8:
+<p align="center"> <img src="Capturas/01_7,8.png" alt="Puntos 7 y 8"> </p>
+
+Punto 9:
+<p align="center"> <img src="Capturas/01_9.png" alt="Punto 9"> </p>
 
 ### Parte 2 – Polinómica + Interacción (masa y temperatura)
 
-- Punto 1: ![Punto 1](Capturas/02_1.png)
-- Punto 2: ![Puntos 2](Capturas/02_2.png)
-- Punto 3: ![Puntos 3](Capturas/02_3.png)
-- Punto 4:
-  - ![Punto 4 – gráfico 1](Capturas/02_4a.png)
-  - ![Punto 4 – gráfico 2](Capturas/02_4b.png)
-- Punto 5: ![Punto 5a](Capturas/02_5a.png)
-           ![Punto 5b](Capturas/02_5b.png)
-- Punto 6: ![Punto 6](Capturas/02_6.png)
-- Punto 7: ![Punto 7](Capturas/02_7.png)
+Punto 1:
+<p align="center"> <img src="Capturas/02_1.png" alt="Punto 1"> </p>
+
+Punto 2:
+<p align="center"> <img src="Capturas/02_2.png" alt="Punto 2"> </p>
+
+Punto 3:
+<p align="center"> <img src="Capturas/02_3.png" alt="Punto 3"> </p>
+
+Punto 4:
+<p align="center"> <img src="Capturas/02_4a.png" alt="Punto 4a"> <br> <img src="Capturas/02_4b.png" alt="Punto 4b"> </p>
+
+Punto 5:
+<p align="center"> <img src="Capturas/02_5a.png" alt="Punto 5a"> <br> <img src="Capturas/02_5b.png" alt="Punto 5b"> </p>
+
+Punto 6:
+<p align="center"> <img src="Capturas/02_6.png" alt="Punto 6"> </p>
+
+Punto 7:
+<p align="center"> <img src="Capturas/02_7.png" alt="Punto 7"> </p>
 
 **Diferencias local vs SageMaker:**
 - Los datasets grandes se manejan mejor en SageMaker gracias al almacenamiento y procesamiento en la nube; en local pueden saturar la memoria.
