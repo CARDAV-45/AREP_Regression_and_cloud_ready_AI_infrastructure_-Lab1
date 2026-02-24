@@ -1,0 +1,182 @@
+====================================================================
+AUTOMATIC COPILOT EVALUATION – TA GRADING REPORT
+Course: Digital Transformation and Enterprise Architecture (AREP)
+Topic: Stellar Luminosity – Linear and Polynomial Regression
+====================================================================
+
+--------------------------------------------------------------------
+SUMMARY
+--------------------------------------------------------------------
+This is a well-executed, technically solid submission. The student
+implements linear regression (Part I) and polynomial regression
+(Part II) entirely from first principles using only NumPy and
+Matplotlib, in strict compliance with the assignment constraints.
+Both notebooks are clearly structured, progressively build upon
+concepts, and include all mandatory elements: cost surface,
+convergence plots with multiple learning rates, model comparison
+(M1/M2/M3), interaction-term sweep, and an inference demo. The
+README is detailed and provides compelling cloud execution evidence
+with screenshots from AWS SageMaker. Conceptual understanding is
+well-demonstrated through discussions of the physical meaning of the
+regression parameters and the limitations of each model.
+
+--------------------------------------------------------------------
+GRADING BREAKDOWN (0.0 – 5.0)
+--------------------------------------------------------------------
+
+1. Repository Structure & Compliance ........... 0.5 / 0.5
+   - README.md present: YES
+   - Two notebooks covering Part I and Part II: YES
+     (01_part1_linreg_1feature.ipynb, 02_part2_polyreg.ipynb)
+   - Datasets defined inside notebooks: YES
+     (numpy arrays defined inline in both notebooks)
+   - Only allowed libraries used: YES
+     (numpy, matplotlib, mpl_toolkits.mplot3d – all standard/allowed)
+   Deductions: None.
+
+2. Notebook 1 – Linear Regression .............. 2.0 / 2.0
+   - Dataset visualization and interpretation: PRESENT
+   - Hypothesis (L_hat = w·M + b) and MSE: PRESENT
+   - Cost surface (3D + contour + explanation): PRESENT [MANDATORY ✓]
+   - Correct gradient derivation (analytical, explicit): PRESENT
+   - Gradient descent – non-vectorized: PRESENT
+   - Gradient descent – vectorized: PRESENT
+   - Convergence plot and discussion: PRESENT [MANDATORY ✓]
+   - Multiple learning rates (α = 0.001, 0.01, 0.05): PRESENT [MANDATORY ✓]
+   - Final fit plot and error/residual discussion: PRESENT
+   - Conceptual discussion of meaning of w: PRESENT
+   - Discussion of limits of linearity (L ∝ M^3.5): PRESENT
+   Deductions: None. All mandatory and optional elements fulfilled.
+
+3. Notebook 2 – Polynomial Regression .......... 2.0 / 2.0
+   - Visualization with temperature color encoding: PRESENT
+   - Feature engineering [M, T, M², M·T]: PRESENT
+   - Vectorized loss and gradient computation: PRESENT
+   - Training loop and convergence plot: PRESENT
+   - Model comparison M1/M2/M3 with loss values: PRESENT [MANDATORY ✓]
+   - Interaction cost analysis (w_MT sweep): PRESENT [MANDATORY ✓]
+   - Inference example with interpretation: PRESENT [MANDATORY ✓]
+   Deductions: None. All mandatory and optional elements fulfilled.
+
+4. Cloud Execution Evidence (SageMaker) ........ 0.5 / 0.5
+   - Description of SageMaker execution in README: PRESENT
+   - Screenshot of notebooks open in SageMaker: PRESENT (Capturas/Notebooks.png)
+   - Screenshots of successful cell execution: PRESENT
+     (Capturas/01_1.png through 01_9.png; 02_1.png through 02_7.png)
+   - At least one plot screenshot: PRESENT (multiple plots captured)
+   - Brief local vs cloud comparison: PRESENT (README section)
+   Deductions: None.
+
+--------------------------------------------------------------------
+FINAL GRADE
+--------------------------------------------------------------------
+Final grade: 5.0 / 5.0
+
+Status: PASS (≥ 3.0)
+
+--------------------------------------------------------------------
+STRENGTHS
+--------------------------------------------------------------------
+- Complete compliance with all assignment constraints (no forbidden
+  libraries, datasets defined inline, two well-structured notebooks).
+- Both non-vectorized and vectorized gradient descent are implemented
+  cleanly and clearly distinguished, aiding pedagogical clarity.
+- The cost surface section is thorough: 3D surface plot, 2D contour
+  plot, and a written explanation of the bowl-shaped convex landscape.
+- Three learning rates (0.001, 0.01, 0.05) are compared with
+  convergence curves; divergence behavior at high α is noted.
+- Part II feature engineering is complete ([M, T, M², M·T]) with a
+  principled step-by-step model comparison (M1 → M2 → M3) quantifying
+  percentage loss reductions (~80–90% for M2, ~95% for M3).
+- The w_MT interaction sweep demonstrates understanding of how a
+  single parameter affects the cost landscape.
+- The README provides a thorough, illustrated account of AWS SageMaker
+  execution, including point-by-point screenshots and a local-vs-cloud
+  comparison.
+- Conceptual discussions are physically grounded (L ∝ M^3.5 power
+  law, stellar astrophysics context).
+
+--------------------------------------------------------------------
+ISSUES & MISSING ELEMENTS
+--------------------------------------------------------------------
+- No issues found. All mandatory and recommended elements are present.
+- Minor note: with α = 0.05 at 300 iterations, the gradient descent
+  may not have fully converged (w ≈ 18 vs the reported optimum w ≈ 15).
+  However, this is addressed in the error discussion, and learning
+  rate analysis inherently includes sub-optimal configurations. No
+  deduction applied.
+- The inference demo in Notebook 2 uses M=1.5 M_sun (the notebook) while
+  the README cites M=1.3 M_sun. Minor inconsistency; does not affect
+  the substance or correctness of the exercise. No deduction applied.
+
+--------------------------------------------------------------------
+TA FEEDBACK TO STUDENT
+--------------------------------------------------------------------
+Excellent work overall. You have demonstrated a solid understanding of
+regression from first principles, meeting every specification of the
+assignment. The cost surface and convergence plots are the most
+instructive parts of Notebook 1 – they make gradient descent
+intuitive. In Notebook 2, the stepwise model comparison (M1 → M2 → M3)
+and the w_MT sweep are highlights that show genuine analytical thinking.
+
+For future improvement, consider:
+1. Running gradient descent to stricter convergence criteria (e.g.,
+   stopping when ||grad(J)|| < epsilon) rather than a fixed iteration count, so
+   that results with different α values can be compared at convergence
+   rather than after the same number of steps.
+2. Adding a train/validation split, even on this small synthetic
+   dataset, to begin thinking about generalization.
+3. Exploring feature normalization (z-score or min-max) before
+   training – this is especially relevant in Part II where M (~1–2)
+   and T (~3800–9200) have very different scales, which can slow
+   convergence or cause numerical issues with higher-degree terms.
+
+Keep up the rigorous, transparent implementation style.
+
+--------------------------------------------------------------------
+AI-GENERATION ASSESSMENT (NON-GRADING – INFORMATIVE ONLY)
+--------------------------------------------------------------------
+This section is observational and does NOT affect the final grade.
+
+A. Qualitative Assessment
+   Indicators of AI-assisted generation:
+   - Highly uniform markdown section structure across both notebooks
+     (numbered PASO headings, consistent formatting).
+   - Explanatory text is fluent and comprehensive with few personal
+     annotations or hesitations; coverage of edge cases (e.g., α too
+     large, α too small) is notably complete.
+   - The README is polished and exhaustive, with structured subsections
+     covering every aspect of the rubric in a systematic way.
+   - Generic phrasing in conceptual sections (e.g., identical formula
+     for astrophysical power law referenced in both README and notebooks).
+
+   Indicators of human involvement:
+   - README includes a candid personal note about local VS Code kernel
+     issues ("esto me falló, No me aparecía ninguno para seleccionar"),
+     which is a characteristic human touch.
+   - The choice of stellar astrophysics as a domain suggests personal
+     interest beyond a generic template.
+   - Some mild inconsistency between the inference example value in the
+     notebook (M=1.5) and in the README (M=1.3) is typical of iterative
+     human editing rather than fully AI-generated content.
+
+B. Quantitative Estimate
+   Code:               ~60–65% AI-assisted
+   Explanations/Markdown: ~65–70% AI-assisted
+   README:             ~60–65% AI-assisted
+
+C. Commentary
+   The project exhibits characteristics common in AI-assisted academic
+   work: systematic structure, complete coverage of rubric points, and
+   polished language. However, the personal anecdotes, domain-specific
+   framing (stellar astrophysics), and minor cross-document
+   inconsistencies suggest meaningful human authorship and curation
+   throughout. The high quality of the final product may reflect either
+   strong student ability, effective use of AI tools as a productivity
+   aid, or a combination of both.
+
+   This assessment is observational and does not imply misconduct.
+
+====================================================================
+END OF EVALUATION
+====================================================================
